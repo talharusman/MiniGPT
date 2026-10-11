@@ -1,0 +1,43 @@
+{
+  "data": {
+    "corpus_path": "data/tinyshakespeare.txt",
+    "corpus_url": "https://raw.githubusercontent.com/karpathy/char-rnn/master/data/tinyshakespeare/input.txt",
+    "val_fraction": 0.1,
+    "overfit_chars": 3000
+  },
+  "model": {
+    "vocab_size": 65,
+    "context_length": 128,
+    "d_model": 128,
+    "n_heads": 4,
+    "n_layers": 4,
+    "ffn_mult": 4,
+    "dropout": 0.1,
+    "pos_encoding": "sinusoidal",
+    "tie_weights": false
+  },
+  "train": {
+    "seed": 1337,
+    "device": "auto",
+    "batch_size": 32,
+    "lr": 0.001,
+    "min_lr": 0.0001,
+    "warmup_steps": 200,
+    "max_steps": 5000,
+    "weight_decay": 0.1,
+    "grad_clip": 1.0,
+    "eval_interval": 250,
+    "eval_iters": 50,
+    "overfit_steps": 300,
+    "overfit_batch": 8,
+    "overfit_lr": 0.003,
+    "sample_tokens": 200,
+    "sample_prompts": [
+      "ROMEO:",
+      "First Citizen:\n",
+      "To be, or not to be",
+      "KING HENRY:",
+      "The "
+    ]
+  }
+}

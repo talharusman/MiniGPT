@@ -1,0 +1,7 @@
+{
+  "checkpoint": "checkpoints/mini_gpt_best.pt",
+  "val_loss": 1.632452483688082,
+  "val_perplexity": 5.116407249662437,
+  "causality_check": true,
+  "parameters": 809984
+}

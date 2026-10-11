@@ -1,0 +1,48 @@
+# Default configuration for MiniGPT on Tiny Shakespeare (character level).
+# Every value here can be overridden on the command line, e.g.
+#   python -m src.train --set model.n_layers=2 train.max_steps=1000
+
+paths:
+  logs: outputs/logs
+  samples: outputs/samples
+  figures: outputs/figures
+  checkpoints: checkpoints
+
+data:
+  corpus_path: data/tinyshakespeare.txt
+  corpus_url: https://raw.githubusercontent.com/karpathy/char-rnn/master/data/tinyshakespeare/input.txt
+  val_fraction: 0.1        # last 10% of the text is validation (contiguous split)
+  overfit_chars: 3000      # size of the debugging subset used by --overfit
+
+model:
+  context_length: 128      # T
+  d_model: 128             # D
+  n_heads: 4               # D must be divisible by n_heads
+  n_layers: 4
+  ffn_mult: 4              # FFN hidden size = ffn_mult * d_model
+  dropout: 0.1
+  pos_encoding: sinusoidal # sinusoidal | learned
+  tie_weights: false
+
+train:
+  seed: 1337
+  device: auto
+  batch_size: 32
+  lr: 1.0e-3               # peak learning rate after warm-up
+  min_lr: 1.0e-4           # cosine decays to this value
+  warmup_steps: 200
+  max_steps: 5000
+  weight_decay: 0.1
+  grad_clip: 1.0
+  eval_interval: 250
+  eval_iters: 50           # validation batches per evaluation
+  overfit_steps: 300       # Milestone 4 gate
+  overfit_batch: 8
+  overfit_lr: 3.0e-3
+  sample_tokens: 200
+  sample_prompts:
+    - "ROMEO:"
+    - "First Citizen:\n"
+    - "To be, or not to be"
+    - "KING HENRY:"
+    - "The "

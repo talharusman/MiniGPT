@@ -1,0 +1,19 @@
+{
+  "run": "mini_gpt",
+  "device": "cuda",
+  "hardware": "Tesla T4",
+  "parameters": 809984,
+  "steps": 5000,
+  "context_length": 128,
+  "n_layers": 4,
+  "n_heads": 4,
+  "d_model": 128,
+  "pos_encoding": "sinusoidal",
+  "first_train_loss": 4.219481468200684,
+  "final_train_loss": 1.4695858459472657,
+  "final_val_loss": 1.632452483688082,
+  "best_val_loss": 1.632452483688082,
+  "train_time_s": 100.6,
+  "tokens_per_sec": 203493.1,
+  "peak_mem_mb": 209.1
+}

@@ -1,0 +1,13 @@
+| sweep | setting | params | best val loss | val perplexity | train time (s) | tokens/s | peak GPU mem (MB) |
+|---|---|---|---|---|---|---|---|
+| depth | model.n_layers=2 | 413,440 | 2.0584 | 7.833 | 17.7 | 346833.7 | 123.3 |
+| depth | model.n_layers=4 | 809,984 | 1.9715 | 7.181 | 32.7 | 188167.5 | 209.1 |
+| depth | model.n_layers=6 | 1,206,528 | 1.9232 | 6.843 | 46.7 | 131632.6 | 295.8 |
+| heads | model.n_heads=2 | 809,984 | 1.9441 | 6.987 | 29.4 | 209006.5 | 194.0 |
+| heads | model.n_heads=4 | 809,984 | 1.9715 | 7.181 | 32.2 | 190825.5 | 209.1 |
+| heads | model.n_heads=8 | 809,984 | 1.9724 | 7.188 | 38.2 | 160954.7 | 253.8 |
+| context | model.context_length=64 | 809,984 | 1.978 | 7.228 | 27.6 | 111226.2 | 109.5 |
+| context | model.context_length=128 | 809,984 | 1.9715 | 7.181 | 32.3 | 190285.1 | 209.1 |
+| context | model.context_length=256 | 809,984 | 1.961 | 7.106 | 69.4 | 177083.5 | 477.2 |
+| position | model.pos_encoding=sinusoidal | 809,984 | 1.9715 | 7.181 | 32.6 | 188333.6 | 209.1 |
+| position | model.pos_encoding=learned | 826,368 | 1.8617 | 6.435 | 32.4 | 189859.9 | 209.2 |

@@ -1,0 +1,7 @@
+.venv
+__pycache__
+data/*.txt
+outputs/ablation
+checkpoints/*_last.pt
+checkpoints/abl_*
+.git
